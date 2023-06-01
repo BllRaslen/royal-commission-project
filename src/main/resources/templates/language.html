@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            background-color: #f7941e;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-left {
+            height: 50px;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        .logo-right {
+            height: 50px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 10px;
+        }
+
+        .nav-links li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #f7941e;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .footer-links li {
+            margin-right: 10px;
+        }
+
+        .footer-links li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .hero-image {
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/RCJY_HQ_Riyadh.jpg/440px-RCJY_HQ_Riyadh.jpg");
+            background-color: #cccccc;
+            height: 700px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        /* Card styles */
+        .card {
+            --border-radius: 0.75rem;
+            --primary-color: #f7941e;
+            --secondary-color: #3c3852;
+            width: 210px;
+            font-family: "Arial", sans-serif;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: var(--border-radius);
+            background: #f1f1f3;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-bottom: 1.5rem; /* Add some spacing between cards */
+        }
+
+        .card > * + * {
+            margin-top: 1.1em;
+        }
+
+        .card .card__content {
+            color: var(--secondary-color);
+            font-size: 0.86rem;
+        }
+
+        .card .card__title {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .card .card__date {
+            color: #6e6b80;
+            font-size: 0.8rem;
+        }
+
+        .card .card__arrow {
+            position: absolute;
+            background: var(--primary-color);
+            padding: 0.4rem;
+            border-top-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            bottom: 0;
+            right: 0;
+            transition: transform 0.2s, background 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card svg {
+            transition: transform 0.2s;
+        }
+
+        /* Hover styles */
+        .card:hover .card__arrow {
+            background: #111;
+        }
+
+        .card:hover .card__arrow svg {
+            transform: translateX(3px);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 1.5rem;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .search-input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            flex: 1;
+            margin-right: 0.5rem;
+        }
+
+        .search-button {
+            padding: 0.5rem 1rem;
+            background-color: #f7941e;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #e78d18;
+        }
+        html, body {
+            /*
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/RCJY_HQ_Riyadh.jpg/440px-RCJY_HQ_Riyadh.jpg");
+            */
+
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .card-list {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="/home-page"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSzW1R_u0XiTkL7SbI49fTOGil8U3zbGeXh-3iw-3PUIbx8ciah-6iRdrXuHy4yHDbBF8rWgz9VEJCc2HERG6MIWA1R7QrgyBMwzV3ylyo7_v2OfP-B3cL7gd1cLNYkaR24lQb2mHl6oRZeUehwPdKvWlDej-AFGiZ680QLZVDJov3-J7EljCZqazZUA/s320/%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D9%84%D9%84%D8%AC%D9%86%D8%B3%D9%8A%D9%86-%D8%A8%D8%B1%D9%88%D8%A7%D8%AA%D8%A8-%D8%AA%D8%B5%D9%84-%D9%84%D9%80-8600-%D8%B1%D9%8A%D8%A7%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D9%87%D9%8A%D8%A6%D8%A9-%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A%D8%A9-copy-1024x683.png"
+                         height="50" width="75" alt="Left Logo" class="logo-left"> </a>
+
+    <!--<div class="container">
+      <ul class="footer-links">
+        <li><a href="/main">الرئيسية | </a></li>
+        <li><a href="support.html">الدعم الفني | </a></li>
+        <li><a href="/adminCheck">لوحة التحكم</a></li>
+      </ul>
+    </div>-->
+    <a href="/home-page"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhitf0ZIpHvweW-VYFEqag6v96TvjVb4xM-xqAxyQAwcQksQMi1Iwhmw1A7WA1DmCMvCPp2vw1ZJ_i5yGVT-88fFZoJy33KFJERs_1y1iwBguUKc8rYJzF6qvm2lb5So1OH9pF9iHK2_hBHIu0C_MFU0FcmXWbhRS0RXIN5PzO-GtNZ_uuhLXa-fNFGSA/s320/20230525_005747.png"
+                         height="50" width="75" alt="Right Logo" class="logo-right"> </a>
+
+</header>
+
+
+<article>
+
+    <div class="hero-image">
+
+        <div class="container">
+
+
+            <!-- Generate a card for each office -->
+            <ul class="card-list">
+                <li >
+                    <div class="card">
+                        <div class="card3">
+                            <a href="/admin/en/offices/add" style="text-decoration: none; color: #111111"> English
+                                <h3 class="card__title" text=""></h3>
+                                <div class="card__content">
+                                    <!-- Add content specific to each office here -->
+                                </div>
+                                <div class="card__arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" height="15" width="15">
+                                        <path d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="card-list">
+                <li >
+                    <div class="card">
+                        <div class="card3">
+                            <a href="/admin/offices/add-ar" style="text-decoration: none;color: #111111">عربي
+                                <h3 class="card__title" text=""></h3>
+                                <div class="card__content">
+                                    <!-- Add content specific to each office here -->
+                                </div>
+                                <div class="card__arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" height="15" width="15">
+                                        <path d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="card-list">
+                <li >
+                    <div class="card">
+                        <div class="card3">
+                            <a href="/home-page" style="text-decoration: none;color: #111111"> الرئيسية
+                                <h3 class="card__title" text=""></h3>
+                                <div class="card__content">
+
+                                </div>
+                                <div class="card__arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" height="15" width="15">
+                                        <path d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="card-list">
+                <li >
+                    <div class="card">
+                        <div class="card3">
+                            <a href="/en/count" style="text-decoration: none; color: #111111"> عدّاد الزوار
+                                <h3 class="card__title" text=""></h3>
+                                <div class="card__content">
+                                    <!-- Add content specific to each office here -->
+                                </div>
+                                <div class="card__arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" height="15" width="15">
+                                        <path d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>
+<script>
+    function searchCards() {
+        var input = document.getElementById("searchInput").value.toLowerCase();
+        var cards = document.getElementsByClassName("card");
+
+        for (var i = 0; i < cards.length; i++) {
+            var title = cards[i].querySelector(".card__title").textContent.toLowerCase();
+            var content = cards[i].querySelector(".card__content").textContent.toLowerCase();
+
+            if (title.includes(input) || content.includes(input)) {
+                cards[i].style.display = "block";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+
+
+<footer>
+    <div class="container">
+        <p>© <script>document.write(/\d{4}/.exec(Date())[0])</script> جميع الحقوق محفوظة</p>
+        <ul class="footer-links">
+            <li><a href="/home-page">الرئيسية | </a></li>
+            <li><a href="/support">الدعم الفني | </a></li>
+            <li><a href="/adminCheck">لوحة التحكم</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

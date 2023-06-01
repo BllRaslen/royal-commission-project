@@ -1,0 +1,134 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Department Locations (Arabic)</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f1f1f3;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  li h3 {
+    margin: 10px 0;
+  }
+
+  li a {
+    margin-right: 10px;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    box-sizing: border-box;
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #f7941e;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #e78d18;
+  }
+
+  /* Optional styles for table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  th {
+    background-color: #f1f1f3;
+    font-weight: bold;
+  }
+
+  td:first-child {
+    font-weight: bold;
+  }
+
+  td:last-child {
+    text-align: center;
+  }
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f7941e;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  a:hover {
+    background-color: #e78d18;
+  }
+</style>
+<body>
+<h1>Department Locations (Arabic)</h1>
+
+<ul>
+  <li th:each="office : ${offices}">
+    <a th:href="@{/admin/offices/edit/{id}-ar(id=${office.id})}">Edit</a> |
+    <a th:href="@{/admin/offices/delete/{id}-ar(id=${office.id})}">Delete</a>
+    <h3>Department Name: <span th:text="${office.departmentName}"></span></h3>
+    <h3>Address: <span th:text="${office.address}"></span></h3>
+  </li>
+</ul>
+
+<a href="/admin/offices/add-ar">Add New Office</a>
+
+<br>
+
+<form method="GET" action="/admin/offices/search-ar">
+  <input type="text" name="query" placeholder="Search offices">
+  <button type="submit">Search</button>
+</form>
+
+</body>
+</html>
